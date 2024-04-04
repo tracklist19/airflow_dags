@@ -39,7 +39,6 @@ default_args = {
 with DAG("uebAtene", default_args=default_args, schedule_interval="@hourly") as dag:
                                                         
 
-
     # PostgresOperator : Create table, write & process spatial data (later on)
 
     Task_I = PostgresOperator(
@@ -83,7 +82,7 @@ with DAG("uebAtene", default_args=default_args, schedule_interval="@hourly") as 
         to="airflow@example.com",
         #provide_context=True,
         subject="Postgres-Copy-Job done on " + str(datetime.utcnow()),
-        html_content=""" <h3>Email Test</h3> """						# <a href="http://example.org">example.org</a>
+        html_content=""" <h3>Email Test</h3> """						        # <a href="http://example.org">example.org</a>
     )
 
 
